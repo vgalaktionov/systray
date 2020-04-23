@@ -3,6 +3,10 @@
 #include "systray.h"
 
 @interface SystrayApplication: NSApplication
+
+@end
+  
+@implementation SystrayApplication
   - (void) sendEvent:(NSEvent *)event {
     if ([event type] == NSKeyDown) {
         if (([event modifierFlags] & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask) {
@@ -35,7 +39,7 @@
         }
     }
     [super sendEvent:event];
-}
+}  
 @end
 
 NSWindowController *windowController = nil;
